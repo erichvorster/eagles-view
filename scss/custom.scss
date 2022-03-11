@@ -1,0 +1,82 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$bg-primary: #ffe400;
+$bg-dark: #272727;
+$bg-secondary: #747474;
+$bg-success: #14a76c;
+
+$container-bg-color: #272727;
+$left-bg-color: $bg-primary;
+$left-button-hover-color: $bg-secondary;
+$right-bg-color: $bg-success;
+$right-button-hover-color: $bg-secondary;
+$hover-width: 75%;
+$other-width: 25%;
+$speed: 1000ms;
+
+html body {
+  padding: 0;
+  margin: 0;
+  font-family: "poppins" sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 4rem;
+  color: $bg-success;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  height: 2.5rem;
+  padding-top: 1.3rem;
+  width: 15rem;
+  text-align: center;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.split.left .button:hover {
+  background-color: $left-button-hover-color;
+  border-color: $left-button-hover-color;
+}
+
+.split.right .button:hover {
+  background-color: $left-button-hover-color;
+  border-color: $left-button-hover-color;
+}
+
+.split-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $container-bg-color;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url("../assets/eagles-Shop.jpg");
+  background-size: cover;
+}
