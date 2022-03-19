@@ -11118,71 +11118,170 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-html body {
-  padding: 0;
-  margin: 0;
-  font-family: "poppins" sans-serif;
-  width: 100%;
-  height: 100%;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
   overflow-x: hidden;
 }
 
-h1, .h1 {
-  font-size: 4rem;
-  color: #14a76c;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  white-space: nowrap;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: white;
 }
 
-.button {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  height: 2.5rem;
-  padding-top: 1.3rem;
-  width: 15rem;
-  text-align: center;
-  color: #fff;
-  border: #fff solid 0.2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #272727;
   text-decoration: none;
-  transform: translateX(-50%);
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-.split.left .button:hover {
-  background-color: #747474;
-  border-color: #747474;
+.burger {
+  display: none;
+  cursor: pointer;
 }
 
-.split.right .button:hover {
-  background-color: #747474;
-  border-color: #747474;
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #272727;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
-.split-container {
+@media screen and (max-width: 1024px) {
+  nav-links {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #14a76c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hero {
+  height: 100vh;
+}
+
+.about {
   position: relative;
-  width: 100%;
-  height: 100%;
-  background: #272727;
 }
 
-.split {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
+.about-container {
+  padding: 100px 0px;
 }
 
-.split.left {
-  left: 0;
-  background: url("/eagles-Shop.9605f2ea.jpg");
+.about-img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.services-img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.kids {
+  height: 80vh;
+  background-image: url(/swings-2.1b8227df.jpg);
   background-size: cover;
+}
+
+.contact {
+  padding: 100px 0;
+}
+
+.golf-hero {
+  background-image: url(/matt2-2.815dc28d.jpg);
+  background-size: cover;
+  height: 30vh;
+}
+
+.range {
+  padding: 100px 0;
+}
+
+.lessons {
+  padding: 100px 0;
+}
+
+.technology {
+  padding: 100px 0;
 }
 
 /*# sourceMappingURL=/custom.18d3a4a7.css.map */

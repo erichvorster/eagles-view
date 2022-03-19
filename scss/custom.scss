@@ -1,82 +1,188 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-$bg-primary: #ffe400;
-$bg-dark: #272727;
-$bg-secondary: #747474;
-$bg-success: #14a76c;
+$primary: #ffe400;
+$dark: #272727;
+$secondary: #747474;
+$success: #14a76c;
 
-$container-bg-color: #272727;
-$left-bg-color: $bg-primary;
-$left-button-hover-color: $bg-secondary;
-$right-bg-color: $bg-success;
-$right-button-hover-color: $bg-secondary;
-$hover-width: 75%;
-$other-width: 25%;
-$speed: 1000ms;
-
-html body {
-  padding: 0;
-  margin: 0;
-  font-family: "poppins" sans-serif;
-  width: 100%;
-  height: 100%;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
   overflow-x: hidden;
 }
 
-h1 {
-  font-size: 4rem;
-  color: $bg-success;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  white-space: nowrap;
+//NAVIGATION
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: white;
 }
 
-.button {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  height: 2.5rem;
-  padding-top: 1.3rem;
-  width: 15rem;
-  text-align: center;
-  color: #fff;
-  border: #fff solid 0.2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: $dark;
   text-decoration: none;
-  transform: translateX(-50%);
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.burger {
+  display: none;
+  cursor: pointer;
 }
 
-.split.left .button:hover {
-  background-color: $left-button-hover-color;
-  border-color: $left-button-hover-color;
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: $dark;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
-.split.right .button:hover {
-  background-color: $left-button-hover-color;
-  border-color: $left-button-hover-color;
+@media screen and (max-width: 1024px) {
+  nav-links {
+    width: 50%;
+  }
 }
 
-.split-container {
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: $success;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+//HERO
+
+.hero {
+  height: 100vh;
+}
+
+//ABOUT
+
+.about {
   position: relative;
-  width: 100%;
-  height: 100%;
-  background: $container-bg-color;
 }
 
-.split {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
+.about-container {
+  padding: 100px 0px;
 }
 
-.split.left {
-  left: 0;
-  background: url("../assets/eagles-Shop.jpg");
+.about-img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+//SERVICES
+
+.services-img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+//KIDS
+
+.kids {
+  height: 80vh;
+  background-image: url(../assets/swings-2.jpg);
   background-size: cover;
+}
+
+//CONTACT
+
+.contact {
+  padding: 100px 0;
+}
+
+//////////////////////////////////////  GOLF   ////////////////////////////////////////
+
+//HERO
+
+.golf-hero {
+  background-image: url(../assets/matt2-2.jpg);
+  background-size: cover;
+  height: 30vh;
+}
+
+//RANGE
+.range {
+  padding: 100px 0;
+}
+
+//lESSONS
+.lessons {
+  padding: 100px 0;
+}
+
+//TECHNOLOGY
+
+.technology {
+  padding: 100px 0;
 }
